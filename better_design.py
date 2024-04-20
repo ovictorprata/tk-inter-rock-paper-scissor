@@ -2,17 +2,21 @@ from tkinter import *
 
 root = Tk()
 root.minsize(500, 800)
+pedra = 'pedra'
+papel = 'papel'
+tesoura = 'tesoura'
 
 def jogar():
-    radio_pedra.pack_forget()
-    radio_papel.pack_forget()
-    radio_tesoura.pack_forget()
+    radio_pedra.place_forget()
+    radio_papel.place_forget()
+    radio_tesoura.place_forget()
+    
 
 def configura_radiobutton(radio_button, opcao, valor, imagem):
-  radio_button.config(variable=opcao, value=valor, image=imagem, compound='left', indicatoron=False, bg='white', borderwidth=0, highlightthickness=0)
+    radio_button.config(variable=opcao, value=valor, image=imagem, compound='left', indicatoron=False, bg='#FFFF88', borderwidth=0, highlightthickness=0, selectcolor='orange')
 
 
-root.config(bg='white')
+root.config(bg='#FFFF88')
 font_button = ('Open Sans', 12,'bold')
 
 imagem_pedra = PhotoImage(file='rock_100.png')
@@ -24,12 +28,10 @@ opcao = StringVar()
 radio_pedra = Radiobutton(root, image=imagem_pedra)
 radio_papel = Radiobutton(root, image=imagem_papel)
 radio_tesoura = Radiobutton(root, image=imagem_tesoura)
-configura_radiobutton(radio_pedra, opcao, 'pedra', imagem_pedra)
-configura_radiobutton(radio_papel, opcao, 'papel', imagem_papel)
-configura_radiobutton(radio_tesoura, opcao, 'tesoura', imagem_tesoura)
 
-
-
+configura_radiobutton(radio_pedra, opcao, pedra, imagem_pedra)
+configura_radiobutton(radio_papel, opcao, papel, imagem_papel)
+configura_radiobutton(radio_tesoura, opcao, tesoura, imagem_tesoura)
 
 
 button_instruction = Button(root, text='Instruções', font=font_button, width=59, height=3, bg='orange', fg='white')
