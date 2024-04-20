@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from random import choice
-from teste import *
+from funcoes_jogo import *
 
 def iniciar_jogo():
     label_x.config(text='X')
