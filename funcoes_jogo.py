@@ -9,4 +9,4 @@ def conferir_resultado(jogador, pc, label):
         resultado = 'O PC GANHOU!'
         color = 'red'
         
-    label.config(text=resultado, fg=color)
+    return resultado, color
